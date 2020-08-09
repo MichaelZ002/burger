@@ -1,0 +1,53 @@
+<div class="container-fluid header">
+    <img src="./assets/burger.jpg" alt="Cartoon Burger" class="img-fluid rounded mx-auto d-block burger-pic" />
+</div>
+<div>
+    <h1 class="text-center burger-header"><u>Michael Borger</u></h1>        
+</div>
+
+<div class="container">
+    <div class="container-fluid">
+        <div class="row two-columns">
+            <div class="col-md-6">
+                <h2>Consuming</h2>
+                <ul>
+                    {{#each burgers}}
+                    {{#unless devoured}}
+                    <li>
+                        {{burger_name}}
+                        <button class="btn eat-btn btn-default btn-sm" id="{{id}}">Devour It!</button>
+                    </li>
+                    {{/unless}}
+                    {{/each}}
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <h2>Consumed</h2>
+                <ul>
+                    {{#each burgers}}
+                    {{#if devoured}}
+                    <li>
+                        {{burger_name}}
+                    </li>
+                    {{/if}}
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="text-center">Add a Borger!</h2>
+                <div align="center">
+                    <form>
+                        <div class="form-group burger-input">
+                            <input class="form-control" type="text" id="burger-name" name="burger_name">
+                        </div>
+                        <div class="text-center">
+                            <button id="add-btn" class="text-center btn btn-default" type="submit">New Borger</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
